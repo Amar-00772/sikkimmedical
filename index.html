@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S innehåller University</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .slider { position: relative; overflow: hidden; }
+        .slides { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 12px; cursor: pointer; font-size: 18px; }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .dots { text-align: center; padding: 10px 0; }
+        .dot { display: inline-block; height: 12px; width: 12px; margin: 0 5px; background-color: #bbb; border-radius: 50%; cursor: pointer; }
+        .dot.active { background-color: #1d4ed8; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header: Two Sections -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Upper Section: Logo & Name -->
+        <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sikkim Medical Council Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">Sikkim Medical Council</h1>
+                        <p class="text-xs md:text-sm opacity-90">A Central University established by an Act of Parliament</p>
+                    </div>
+                </div>
+                <div class="text-xs md:text-sm hidden md:block">
+                    <p class="font-medium">6th Mile, Samdur, Tadong, Gangtok, Sikkim - 737102</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Section: Navigation Menu + Buttons (Aligned in one line) -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center py-3 space-y-3 lg:space-y-0">
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-wrap justify-center lg:justify-start space-x-2 md:space-x-6 text-sm md:text-base">
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Academics</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Admissions</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Research</a>
+                        <a href="Constitution.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Constitution</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Contact</a>
+                    </nav>
+
+                    <!-- Action Buttons (Aligned with menu) -->
+                    <div class="flex space-x-3">
+                        <a href="resgistration.html" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-user-plus mr-2"></i> Online Registration
+                        </a>
+                        <a href="doctorsearch.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-search mr-2"></i> Doctor Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Image Slider -->
+    <section class="slider mt-4">
+        <div class="slides" id="slides">
+            <div class="slide">
+                <img src="assets/slide1.jpeg" alt="Slide 1" class="w-full h-64 md:h-96 object-cover">
+            </div>
+            <div class="slide">
+                <img src="assets/slide2.jpg" alt="Slide 2" class="w-full h-64 md:h-96 object-cover">
+            </div>
+            <div class="slide">
+                <img src="assets/slide3.jpg" alt="Slide 3" class="w-full h-64 md:h-96 object-cover">
+            </div>
+        </div>
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- Dignitaries Section -->
+    <section class="bg-gradient-to-b from-blue-50 to-white py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+                Leadership
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition text-center">
+                    <img src="assets/chief1.jfif" alt="Chief Minister" class="w-28 h-28 mx-auto rounded-full border-4 border-yellow-500 mb-4 object-cover">
+                    <h3 class="text-lg font-bold text-blue-900">Shri Prem Singh Tamang</h3>
+                    <p class="text-sm text-gray-600">Hon'ble Chief Minister of Sikkim</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition text-center">
+                    <img src="assets/mk.jpg" alt="Health Minister" class="w-28 h-28 mx-auto rounded-full border-4 border-green-500 mb-4 object-cover">
+                    <h3 class="text-lg font-bold text-blue-900">Dr. M.K. Sharma</h3>
+                    <p class="text-sm text-gray-600">Hon'ble Health Minister of Sikkim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section with Image -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <!-- Text Content -->
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-5">About Sikkim Medical Council</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Established in 2007 under an Act of Parliament, <strong>Sikkim Medical Council</strong> is a premier central university nestled in the serene Himalayan landscape of Gangtok. We are committed to excellence in teaching, research, and community engagement.
+                </p>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    With state-of-the-art infrastructure, world-class faculty, and interdisciplinary programs, we nurture future leaders in arts, science, technology, management, and social sciences.
+                </p>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Our campus promotes sustainability, cultural diversity, and innovation while preserving the rich heritage of Sikkim.
+                </p>
+                <a href="#" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-md transition shadow">
+                    Know More About Us
+                </a>
+            </div>
+
+            <!-- Image -->
+            <div class="order-first lg:order-last">
+                <img src="assets/Screenshot (194).png" 
+                     alt="Sikkim Medical Council Campus" 
+                     class="w-full h-80 object-cover rounded-xl shadow-lg hover:shadow-xl transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section class="container mx-auto px-4 py-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6 flex items-center">
+            What's New
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="font-semibold text-lg text-blue-800 mb-2">Admission Notification 2025</h3>
+                <p class="text-sm text-gray-600 mb-3">Applications invited for UG, PG & PhD programs. Last date: 30th Nov 2025.</p>
+                <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="font-semibold text-lg text-blue-800 mb-2">National Seminar on Himalayan Studies</h3>
+                <p class="text-sm text-gray-600 mb-3">Date: 15-17 Dec 2025 | Venue: University Auditorium</p>
+                <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Register Now</a>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="font-semibold text-lg text-blue-800 mb-2">NAAC A++ Accreditation</h3>
+                <p class="text-sm text-gray-600 mb-3">Sikkim Medical Council achieves highest grade in recent NAAC evaluation.</p>
+                <a href="#" class="text-blue-600 text-sm font-medium hover:underline">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links & Important Sections -->
+    <section class="bg-blue-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-xl transition">
+                    <i class="fas fa-graduation-cap text-4xl text-blue-700 mb-4"></i>
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">Academics</h3>
+                    <p class="text-sm text-gray-600 mb-3">Explore departments, programs, and academic calendar.</p>
+                    <a href="#" class="text-blue-600 font-medium text-sm hover:underline">Learn More</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-xl transition">
+                    <i class="fas fa-user-graduate text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">Admissions</h3>
+                    <p class="text-sm text-gray-600 mb-3">Apply online for UG, PG, Diploma & PhD courses.</p>
+                    <a href="#" class="text-blue-600 font-medium text-sm hover:underline">Apply Now</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-xl transition">
+                    <i class="fas fa-flask text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">Research</h3>
+                    <p class="text-sm text-gray-600 mb-3">Discover research centers, projects & publications.</p>
+                    <a href="#" class="text-blue-600 font-medium text-sm hover:underline">Explore</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-xl transition">
+                    <i class="fas fa-users text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">Student Corner</h3>
+                    <p class="text-sm text-gray-600 mb-3">Portal, exam results, scholarships & hostel info.</p>
+                    <a href="#" class="text-blue-600 font-medium text-sm hover:underline">Access Portal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Notices -->
+    <section class="container mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6 flex items-center">
+                    Upcoming Events
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3 bg-gray-100 p-4 rounded-lg">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-bold">12</div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800">Cultural Fest 2025</h4>
+                            <p class="text-sm text-gray-600">Dec 12-14, 2025 | Main Campus Ground</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-gray-100 p-4 rounded-lg">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-bold">20</div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800">Annual Sports Meet</h4>
+                            <p class="text-sm text-gray-600">Dec 20-22, 2025 | University Sports Complex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6 flex items-center">
+                    Quick Notices
+                </h2>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1"></i>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline">Holiday Notice: Guru Nanak Jayanti - Nov 15</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1"></i>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline">Revised Exam Schedule for Semester III</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1"></i>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline">Hostel Allotment List Released</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1"></i>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline">Library Timings Extended During Exams</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Sikkim Medical Council</h3>
+                    <p class="text-sm text-blue-200">6th Mile, Samdur, P.O. Tadong,<br>Gangtok, Sikkim - 737102</p>
+                    <p class="text-sm mt-3">Phone: +91-3592-251438<br>Email: contactus@cus.ac.in</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+                    <ul class="text-sm space-y-1 text-blue-200">
+                        <li><a href="#" class="hover:text-white">Sitemap</a></li>
+                        <li><a href="#" class="hover:text-white">RTI</a></li>
+                        <li><a href="#" class="hover:text-white">Tenders</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Alumni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Resources</h3>
+                    <ul class="text-sm space-y-1 text-blue-200">
+                        <li><a href="#" class="hover:text-white">Library</a></li>
+                        <li><a href="#" class="hover:text-white">e-Learning</a></li>
+                        <li><a href="#" class="hover:text-white">NIRF Ranking</a></li>
+                        <li><a href="#" class="hover:text-white">Annual Report</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Connect With Us</h3>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-xs mt-4 text-blue-300">© 2025 Sikkim Medical Council. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slider Script -->
+    <script>
+        let slideIndex = 1;
+        const slides = document.getElementById('slides');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides(n) {
+            if (n > 3) slideIndex = 1;
+            if (n < 1) slideIndex = 3;
+            slides.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        setInterval(() => changeSlide(1), 5000);
+        showSlides(slideIndex);
+    </script>
+</body>
+</html>

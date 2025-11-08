@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History - Sikkim Medical Council Health Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .history-card { transition: all 0.3s ease; }
+        .history-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #3b82f6;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background: #1e40af;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px #3b82f6;
+        }
+        .timeline-content {
+            width: calc(50% - 40px);
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .timeline-content.left { margin-left: 0; }
+        .timeline-content.right { margin-left: auto; margin-right: 0; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Upper Section: Logo & Name -->
+        <div class="gradient-bg text-white py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sikkim Medical Council Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">Sikkim Medical Council Health Portal</h1>
+                        <p class="text-xs md:text-sm opacity-90">Legacy of Care & Innovation</p>
+                    </div>
+                </div>
+                <div class="text-xs md:text-sm hidden md:block">
+                    <p class="font-medium">Founded 2023 | November 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Section: Navigation Menu -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center py-3 space-y-3 lg:space-y-0">
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-wrap justify-center lg:justify-start space-x-2 md:space-x-6 text-sm md:text-base">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Services</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Contact</a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3">
+                        <a href="resgistration.html" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            Register
+                        </a>
+                        <a href="doctorsearch.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            Find Doctor
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                Our History
+            </h1>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 fade-in">
+                From a visionary idea in 2023 to a transformative digital health ecosystem in 2025 — <strong>we've been building bridges between technology and healthcare</strong> to serve the people of Sikkim.
+            </p>
+            <div class="mt-10 fade-in">
+                <div class="inline-flex items-center bg-white text-blue-900 px-6 py-3 rounded-full shadow-lg font-semibold">
+                    <i class="fas fa-history mr-3 text-xl"></i>
+                    A Journey of Digital Health Transformation
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-16 fade-in">
+            Our Journey Through Time
+        </h2>
+        <div class="relative timeline max-w-5xl mx-auto">
+            <!-- 2023 -->
+            <div class="timeline-item flex justify-start md:justify-end fade-in">
+                <div class="timeline-content left md:mr-auto">
+                    <div class="text-right md:text-left">
+                        <span class="text-2xl font-bold text-blue-700 block mb-2">2023</span>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">The Vision Begins</h3>
+                        <p class="text-gray-600">
+                            Sikkim Medical Council Health Services identifies the need for a <strong>centralized digital doctor registry</strong>. A task force is formed under the Vice Chancellor to study telemedicine feasibility in mountainous terrain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid 2023 -->
+            <div class="timeline-item flex justify-start fade-in">
+                <div class="timeline-content right md:ml-auto">
+                    <span class="text-2xl font-bold text-green-700 block mb-2">July 2023</span>
+                    <h3 class="text-xl font-bold text-green-900 mb-2">Pilot Project Launched</h3>
+                    <p class="text-gray-600">
+                        First <strong>telemedicine pilot</strong> connects STNM Hospital Gangtok with 5 remote PHCs. 87% patient satisfaction recorded. Government of Sikkim grants seed funding.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="timeline-item flex justify-start md:justify-end fade-in">
+                <div class="timeline-content left md:mr-auto">
+                    <div class="text-right md:text-left">
+                        <span class="text-2xl font-bold text-purple-700 block mb-2">2024</span>
+                        <h3 class="text-xl font-bold text-purple-900 mb-2">Portal Development</h3>
+                        <p class="text-gray-600">
+                            <strong>Health Portal v1.0</strong> developed in collaboration with IIT Guwahati. Features: Doctor registration, search, and emergency routing system. Beta testing begins with 200 doctors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Early 2025 -->
+            <div class="timeline-item flex justify-start fade-in">
+                <div class="timeline-content right md:ml-auto">
+                    <span class="text-2xl font-bold text-orange-700 block mb-2">March 2025</span>
+                    <h3 class="text-xl font-bold text-orange-900 mb-2">Statewide Rollout</h3>
+                    <p class="text-gray-600">
+                        Portal goes live across all 4 districts. <strong>1,247 doctors registered</strong> within 60 days. Integration with Ayushman Bharat Digital Mission (ABDM) completed.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mid 2025 -->
+            <div class="timeline-item flex justify-start md:justify-end fade-in">
+                <div class="timeline-content left md:mr-auto">
+                    <div class="text-right md:text-left">
+                        <span class="text-2xl font-bold text-teal-700 block mb-2">June 2025</span>
+                        <h3 class="text-xl font-bold text-teal-900 mb-2">Mobile App Launch</h3>
+                        <p class="text-gray-600">
+                            <strong>Sikkim Health App</strong> launched on Android & iOS. Features: Doctor search, appointment booking, digital health ID, and emergency SOS. Downloaded by 45,000+ citizens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Now -->
+            <div class="timeline-item flex justify-start fade-in">
+                <div class="timeline-content right md:ml-auto">
+                    <span class="text-2xl font-bold text-pink-700 block mb-2">November 2025</span>
+                    <h3 class="text-xl font-bold text-pink-900 mb-2">Today</h3>
+                    <p class="text-gray-600">
+                        <strong>98% of Sikkim's doctors</strong> are on the portal. Serving <strong>1.2 lakh+ consultations</strong> monthly. Recognized by WHO as a model for digital health in hilly regions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Milestones -->
+    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12 fade-in">
+                Key Milestones
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-2xl text-blue-700"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-blue-900">2,500+</h3>
+                    <p class="text-gray-600 mt-2">Registered Doctors</p>
+                </div>
+                <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-hospital text-2xl text-green-700"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-green-900">147</h3>
+                    <p class="text-gray-600 mt-2">PHCs Connected</p>
+                </div>
+                <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-2xl text-purple-700"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-purple-900">85K+</h3>
+                    <p class="text-gray-600 mt-2">App Downloads</p>
+                </div>
+                <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-award text-2xl text-orange-700"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-orange-900">12</h3>
+                    <p class="text-gray-600 mt-2">National Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founding Team -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12 fade-in">
+            The Pioneers
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                <img src="assets/ab1.jpg" alt="Vice Chancellor" class="w-28 h-28 mx-auto rounded-full border-4 border-blue-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold text-blue-900">Prof. Avinash Khare</h3>
+                <p class="text-sm text-gray-600">Vice Chancellor</p>
+                <p class="text-xs text-gray-500 mt-2 italic">"Digital health is the future of equity"</p>
+            </div>
+            <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                <img src="assets/Dr. Karma Loday.jpg" alt="Director" class="w-28 h-28 mx-auto rounded-full border-4 border-green-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold text-green-900">Dr. Karma Loday</h3>
+                <p class="text-sm text-gray-600">Director, Health Services</p>
+                <p class="text-xs text-gray-500 mt-2 italic">"Every village deserves a specialist"</p>
+            </div>
+            <div class="history-card bg-white p-6 rounded-xl shadow-lg text-center fade-in">
+                <img src="assets/Sonam_Wangchuk,_2017_(cropped).jpg" alt="CTO" class="w-28 h-28 mx-auto rounded-full border-4 border-purple-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold text-purple-900">Er. Sonam Wangchuk</h3>
+                <p class="text-sm text-gray-600">Chief Technical Officer</p>
+                <p class="text-xs text-gray-500 mt-2 italic">"Technology must climb mountains too"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Quote -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto fade-in">
+                <i class="fas fa-quote-left text-4xl opacity-50 mb-6"></i>
+                <p class="text-xl md:text-2xl font-medium italic leading-relaxed">
+                    "We didn't just build a portal — we built a lifeline. From the first line of code to the first saved life, every step has been about serving Sikkim's people."
+                </p>
+                <p class="mt-6 text-sm font-semibold">
+                    — Founding Team, 2023
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">
+                Be Part of Our Growing Legacy
+            </h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8 opacity-90 fade-in">
+                Join thousands of doctors and citizens shaping the future of healthcare in Sikkim.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="doctor-registration.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition flex items-center justify-center">
+                    Register Now
+                </a>
+                <a href="doctor-search.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-lg transition">
+                    Explore Portal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Sikkim Medical Council. All Rights Reserved.</p>
+            <p class="text-xs mt-2 text-gray-400">A Legacy of Digital Health Innovation</p>
+        </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

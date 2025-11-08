@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Search - Sikkim Medical Council</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .result-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .no-results { display: none; }
+        .search-option { transition: all 0.3s ease; }
+        .search-option.active { border-color: #2563eb; background-color: #eff6ff; }
+        .search-option:not(.active) { opacity: 0.7; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Upper Section: Logo & Name -->
+        <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sikkim University Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">Sikkim Medical Council</h1>
+                        <p class="text-xs md:text-sm opacity-90">Doctor Search & Registration</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Lower Section: Navigation Menu -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center py-3 space-y-3 lg:space-y-0">
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-wrap justify-center lg:justify-start space-x-2 md:space-x-6 text-sm md:text-base">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Services</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Contact</a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3">
+                        <a href="resgistration.html" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-user-plus mr-2"></i> Register
+                        </a>
+                        <a href="resgistration.html#signin" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Search Options Tabs -->
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+                    <i class="fas fa-search mr-2 text-blue-600"></i> Search Registered Doctors
+                </h2>
+
+                <!-- Search Option Buttons -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <button id="option1Btn" class="search-option active p-6 border-2 rounded-xl flex flex-col items-center text-center hover:shadow-md transition">
+                        <i class="fas fa-user-md text-4xl text-blue-600 mb-3"></i>
+                        <h3 class="text-lg font-bold text-blue-900">Option 1: Search by Name & Details</h3>
+                        <p class="text-sm text-gray-600 mt-1">Name, Gender, Father's Name</p>
+                    </button>
+                    <button id="option2Btn" class="search-option p-6 border-2 border-gray-300 rounded-xl flex flex-col items-center text-center hover:shadow-md transition">
+                        <i class="fas fa-id-card text-4xl text-green-600 mb-3"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Option 2: Search by Registration No.</h3>
+                        <p class="text-sm text-gray-600 mt-1">Final Medical Registration Number</p>
+                    </button>
+                </div>
+
+                <!-- Option 1 Form: Name, Gender, Father Name -->
+                <form id="option1Form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Doctor Name -->
+                        <div>
+                            <label for="docName" class="block text-sm font-medium text-gray-700 mb-2">Doctor's Name</label>
+                            <input type="text" id="docName" name="docName"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter full or partial name">
+                        </div>
+
+                        <!-- Gender -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gender *</label>
+                            <select id="gender" name="gender" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Father's Name -->
+                        <div>
+                            <label for="fatherName" class="block text-sm font-medium text-gray-700 mb-2">Father's Name</label>
+                            <input type="text" id="fatherName" name="fatherName"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter father's name">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition shadow-md flex items-center">
+                            <i class="fas fa-search mr-2"></i> Search Doctor
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Option 2 Form: Registration No -->
+                <form id="option2Form" class="space-y-6 hidden">
+                    <div class="max-w-md mx-auto">
+                        <label for="regNo" class="block text-sm font-medium text-gray-700 mb-2">Final Medical Registration No. *</label>
+                        <input type="text" id="regNo" name="regNo" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-center text-lg font-mono"
+                               placeholder="e.g., SMC-2025-1234">
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit"
+                                class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-lg transition shadow-md flex items-center">
+                            <i class="fas fa-search mr-2"></i> Search by Reg. No.
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Search Results -->
+            <div id="resultsContainer" class="space-y-6">
+                <!-- Results injected here -->
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="text-center py-12 text-gray-600 no-results">
+                <i class="fas fa-exclamation-circle text-5xl text-gray-400 mb-4"></i>
+                <p class="text-lg font-medium">No doctors found.</p>
+                <p class="text-sm mt-2">Try different search criteria.</p>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="text-center py-8 hidden">
+                <i class="fas fa-spinner fa-spin text-4xl text-blue-600"></i>
+                <p class="mt-3 text-gray-700">Searching...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Sikkim Medical Council. All Rights Reserved.</p>
+            <p class="text-xs mt-2 text-blue-200">Contact: health@cus.ac.in | +91-3592-251438</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Toggle Search Options
+        const option1Btn = document.getElementById('option1Btn');
+        const option2Btn = document.getElementById('option2Btn');
+        const option1Form = document.getElementById('option1Form');
+        const option2Form = document.getElementById('option2Form');
+
+        option1Btn.addEventListener('click', () => {
+            option1Btn.classList.add('active');
+            option2Btn.classList.remove('active');
+            option1Form.classList.remove('hidden');
+            option2Form.classList.add('hidden');
+        });
+
+        option2Btn.addEventListener('click', () => {
+            option2Btn.classList.add('active');
+            option1Btn.classList.remove('active');
+            option2Form.classList.remove('hidden');
+            option1Form.classList.add('hidden');
+        });
+
+        // Sample Doctors Database
+        const doctorsDB = [
+            { name: "Dr. Rajesh Kumar Sharma", gender: "male", fatherName: "Shri Mohan Lal Sharma", regNo: "SMC-2025-1001", specialty: "Cardiologist", hospital: "STNM Hospital" },
+            { name: "Dr. Anjali Devi", gender: "female", fatherName: "Shri Ramesh Chandra", regNo: "SMC-2025-1002", specialty: "Pediatrician", hospital: "Namchi Hospital" },
+            { name: "Dr. Tenzing Dorjee", gender: "male", fatherName: "Shri Sonam Dorjee", regNo: "SMC-2025-1003", specialty: "Orthopedic", hospital: "CRH Tadong" },
+            { name: "Dr. Priya Tamang", gender: "female", fatherName: "Shri Karma Tamang", regNo: "SMC-2025-1004", specialty: "Gynecologist", hospital: "Singtam Hospital" }
+        ];
+
+        const resultsContainer = document.getElementById('resultsContainer');
+        const noResults = document.getElementById('noResults');
+        const loading = document.getElementById('loading');
+
+        // Handle Option 1 Search
+        option1Form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch('option1');
+        });
+
+        // Handle Option 2 Search
+        option2Form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch('option2');
+        });
+
+        function performSearch(type) {
+            loading.classList.remove('hidden');
+            resultsContainer.innerHTML = '';
+            noResults.classList.add('no-results');
+
+            let results = [...doctorsDB];
+
+            if (type === 'option1') {
+                const name = document.getElementById('docName').value.trim().toLowerCase();
+                const gender = document.getElementById('gender').value;
+                const fatherName = document.getElementById('fatherName').value.trim().toLowerCase();
+
+                if (name) results = results.filter(d => d.name.toLowerCase().includes(name));
+                if (gender) results = results.filter(d => d.gender === gender);
+                if (fatherName) results = results.filter(d => d.fatherName.toLowerCase().includes(fatherName));
+            } else {
+                const regNo = document.getElementById('regNo').value.trim().toUpperCase();
+                results = results.filter(d => d.regNo === regNo);
+            }
+
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                if (results.length > 0) {
+                    results.forEach(doc => {
+                        const card = `
+                            <div class="bg-white p-6 rounded-xl shadow result-card">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-xl font-bold text-blue-900">${doc.name}</h3>
+                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Verified</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                                    <div><strong>Reg No:</strong> <span class="text-blue-600 font-mono">${doc.regNo}</span></div>
+                                    <div><strong>Specialty:</strong> ${doc.specialty}</div>
+                                    <div><strong>Father's Name:</strong> ${doc.fatherName}</div>
+                                    <div><strong>Hospital:</strong> ${doc.hospital}</div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-gray-200 text-right">
+                                    <button class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Profile</button>
+                                </div>
+                            </div>
+                        `;
+                        resultsContainer.innerHTML += card;
+                    });
+                } else {
+                    noResults.classList.remove('no-results');
+                }
+            }, 800);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration - Sikkim Medical Council</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .form-section { max-width: 500px; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Upper Section: Logo & Name -->
+        <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sikkim Medical Council Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">Sikkim Medical Council</h1>
+                        <p class="text-xs md:text-sm opacity-90">Doctor Registration & Services</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Lower Section: Navigation Menu -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center py-3 space-y-3 lg:space-y-0">
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-wrap justify-center lg:justify-start space-x-2 md:space-x-6 text-sm md:text-base">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Services</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Contact</a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3">
+                        <a href="#signin" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            <i class="fas fa-search mr-2"></i> Doctor Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Sidebar: Quick Sections -->
+            <aside class="lg:col-span-1 space-y-6">
+                <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center">
+                    <i class="fas fa-th-list mr-2 text-blue-600"></i> Quick Access
+                </h3>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center p-3 bg-white rounded-lg shadow hover:shadow-md transition text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-bell text-lg mr-3 text-yellow-600"></i>
+                        <span class="font-medium">View Notifications</span>
+                    </a>
+                    <a href="#" class="flex items-center p-3 bg-white rounded-lg shadow hover:shadow-md transition text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-users text-lg mr-3 text-green-600"></i>
+                        <span class="font-medium">Executive Members</span>
+                    </a>
+                    <a href="#" class="flex items-center p-3 bg-white rounded-lg shadow hover:shadow-md transition text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-user-tie text-lg mr-3 text-purple-600"></i>
+                        <span class="font-medium">Officers</span>
+                    </a>
+                    <a href="#" class="flex items-center p-3 bg-white rounded-lg shadow hover:shadow-md transition text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-file-contract text-lg mr-3 text-red-600"></i>
+                        <span class="font-medium">Registration Act</span>
+                    </a>
+                    <a href="#" class="flex items-center p-3 bg-white rounded-lg shadow hover:shadow-md transition text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-calendar-alt text-lg mr-3 text-indigo-600"></i>
+                        <span class="font-medium">Academic Calendar</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Center: Registration & Sign In Forms -->
+            <div class="lg:col-span-2">
+                <!-- Registration Form -->
+                <div id="register" class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-6">
+                        <i class="fas fa-user-md mr-2 text-green-600"></i> Doctor Registration
+                    </h2>
+                    <form id="regForm" class="space-y-5">
+                        <div>
+                            <label for="fullname" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label for="dob" class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   max="2005-11-05">
+                        </div>
+                        <div>
+                            <label for="mobile" class="block text-sm font-medium text-gray-700 mb-2">Mobile Number *</label>
+                            <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter 10-digit mobile number">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gender *</label>
+                            <div class="flex space-x-6">
+                                <label class="flex items-center">
+                                    <input type="radio" name="gender" value="male" required class="mr-2 text-blue-600">
+                                    <span class="text-sm">Male</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="gender" value="female" required class="mr-2 text-blue-600">
+                                    <span class="text-sm">Female</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="gender" value="other" required class="mr-2 text-blue-600">
+                                    <span class="text-sm">Other</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password *</label>
+                            <input type="password" id="password" name="password" required minlength="8"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Create a password (min 8 characters)">
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition shadow-md flex items-center justify-center">
+                            <i class="fas fa-user-plus mr-2"></i> Register Now
+                        </button>
+                    </form>
+                    <p class="text-center text-sm text-gray-600 mt-4">
+                        Already registered? <a href="#signin" class="text-blue-600 hover:underline font-medium" onclick="showSignIn()">Sign In Here</a>
+                    </p>
+                </div>
+
+                <!-- Sign In Form -->
+                <div id="signin" class="bg-white p-8 rounded-xl shadow-lg hidden">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-6">
+                        <i class="fas fa-sign-in-alt mr-2 text-blue-600"></i> Doctor Sign In
+                    </h2>
+                    <form id="signInForm" class="space-y-5">
+                        <div>
+                            <label for="signMobile" class="block text-sm font-medium text-gray-700 mb-2">Mobile Number *</label>
+                            <input type="tel" id="signMobile" name="signMobile" required pattern="[0-9]{10}"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter 10-digit mobile number">
+                        </div>
+                        <div>
+                            <label for="signPassword" class="block text-sm font-medium text-gray-700 mb-2">Password *</label>
+                            <input type="password" id="signPassword" name="signPassword" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter your password">
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition shadow-md flex items-center justify-center">
+                            <i class="fas fa-arrow-right mr-2"></i> Sign In
+                        </button>
+                    </form>
+                    <p class="text-center text-sm text-gray-600 mt-4">
+                        New user? <a href="#register" class="text-green-600 hover:underline font-medium" onclick="showRegister()">Register Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Sikkim Medical Council. All Rights Reserved.</p>
+            <p class="text-xs mt-2 text-blue-200">For support, contact: health@cus.ac.in | +91-3592-251438</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle between Register and Sign In
+        function showSignIn() {
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('signin').classList.remove('hidden');
+        }
+
+        function showRegister() {
+            document.getElementById('signin').classList.add('hidden');
+            document.getElementById('register').classList.remove('hidden');
+        }
+
+        // Registration Form Submission (Demo - Replace with actual backend)
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Registration submitted! Check your email for verification. (Demo)');
+            // Here: Send to server via fetch/AJAX
+        });
+
+        // Sign In Form Submission (Demo - Replace with actual backend)
+        document.getElementById('signInForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sign in successful! Redirecting to dashboard. (Demo)');
+            // Here: Authenticate and redirect
+        });
+
+        // DOB max date (18+ years old as of 2025-11-05)
+        document.getElementById('dob').max = '2007-11-05';
+    </script>
+</body>
+</html>

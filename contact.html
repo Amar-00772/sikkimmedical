@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sikkim Medical Council</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .office-hours th {
+            background: #f3f4f6;
+            font-weight: 600;
+        }
+        .office-hours td {
+            background: #ffffff;
+        }
+        .office-hours tr:hover td {
+            background: #eff6ff;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Upper Section -->
+        <div class="gradient-bg text-white py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sikkim Medical Council Logo" class="w-12 h-12 rounded-full border-2 border-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">Sikkim Medical Council</h1>
+                        <p class="text-xs md:text-sm opacity-90">Contact & Support</p>
+                    </div>
+                </div>
+                <div class="text-xs md:text-sm hidden md:block">
+                    <p class="font-medium">24/7 Support Available</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center py-3 space-y-3 lg:space-y-0">
+                    <nav class="flex flex-wrap justify-center lg:justify-start space-x-2 md:space-x-6 text-sm md:text-base">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Services</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium py-1 px-2 rounded transition">Contact</a>
+                    </nav>
+                    <div class="flex space-x-3">
+                        <a href="doctor-registration.html" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            Register
+                        </a>
+                        <a href="doctor-search.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium transition flex items-center shadow-sm">
+                            Find Doctor
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                Contact Us
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 fade-in">
+                Reach out to us via email, phone, or visit our office. We're here to help 24/7.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Address -->
+            <div class="contact-card bg-white p-8 rounded-xl shadow-lg text-center fade-in">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <i class="fas fa-map-marker-alt text-2xl text-blue-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Office Address</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Sikkim Medical Council</strong><br>
+                    8JW3+8FC,<br>
+                    STNM Hospital Driveway Rd, Arithang,<br>
+                    Gangtok, Sikkim - 737102
+                </p>
+            </div>
+
+            <!-- Phone Numbers -->
+            <div class="contact-card bg-white p-8 rounded-xl shadow-lg text-center fade-in">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <i class="fas fa-phone-alt text-2xl text-green-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-green-900 mb-3">Phone Numbers</h3>
+                <div class="space-y-2 text-gray-700">
+                    <p><strong>General Inquiry:</strong> <a href="tel:+913592251438" class="text-blue-600 hover:underline">+91-3592-251438</a></p>
+                    <p><strong>Doctor Registration:</strong> <a href="tel:+913592251439" class="text-blue-600 hover:underline">+91-3592-251439</a></p>
+                    <p><strong>Technical Support:</strong> <a href="tel:+919876543210" class="text-blue-600 hover:underline">+91-98765-43210</a></p>
+                </div>
+            </div>
+
+            <!-- Emails -->
+            <div class="contact-card bg-white p-8 rounded-xl shadow-lg text-center fade-in">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <i class="fas fa-envelope text-2xl text-purple-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-purple-900 mb-3">Email Addresses</h3>
+                <div class="space-y-2 text-gray-700">
+                    <p><strong>General:</strong> <a href="mailto:health@cus.ac.in" class="text-blue-600 hover:underline">sikkimmedicalcouncil@gmail.com</a></p>
+                    <p><strong>Registration:</strong> <a href="mailto:registration@cus.ac.in" class="text-blue-600 hover:underline">sikkimmedicalcouncil@gmail.com</a></p>
+                    <p><strong>Support:</strong> <a href="mailto:support@cus.ac.in" class="text-blue-600 hover:underline">supportsikkim@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Hours -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-10 fade-in">
+                Office Opening & Closing Time
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+                <table class="w-full office-hours">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700">Day</th>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700">Opening Time</th>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700">Closing Time</th>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Monday</td>
+                            <td class="px-6 py-4">09:00 AM</td>
+                            <td class="px-6 py-4">05:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-medium">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Tuesday</td>
+                            <td class="px-6 py-4">09:00 AM</td>
+                            <td class="px-6 py-4">05:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-medium">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Wednesday</td>
+                            <td class="px-6 py-4">09:00 AM</td>
+                            <td class="px-6 py-4">05:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-medium">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Thursday</td>
+                            <td class="px-6 py-4">09:00 AM</td>
+                            <td class="px-6 py-4">05:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-medium">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Friday</td>
+                            <td class="px-6 py-4">09:00 AM</td>
+                            <td class="px-6 py-4">05:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-medium">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Saturday</td>
+                            <td class="px-6 py-4">10:00 AM</td>
+                            <td class="px-6 py-4">02:00 PM</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full font-medium">Half Day</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium text-red-600">Sunday</td>
+                            <td class="px-6 py-4" colspan="2">Closed</td>
+                            <td class="px-6 py-4"><span class="inline-block bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full font-medium">Closed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Sikkim Medical Council. All Rights Reserved.</p>
+            </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
